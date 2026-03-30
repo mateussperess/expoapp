@@ -5,6 +5,7 @@
     "source.sortMembers": "explicit"
   },
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
   }
 }
