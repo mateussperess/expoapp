@@ -9,7 +9,7 @@ const easterStyle = StyleSheet.create({
     backgroundColor: "#333",
   },
   text: {
-    fontSize: 24,
+    fontSize: 15,
     color: "#fff",
     fontWeight: "bold",
   },
