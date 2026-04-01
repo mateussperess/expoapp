@@ -34,6 +34,7 @@ export default function Index() {
           data={leagues}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => <League data={item} />}
+          scrollEnabled={false}
         />
 
         <Button
