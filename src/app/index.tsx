@@ -1,9 +1,14 @@
+import { LeagueProps } from "@/types/League.types";
 import { useEffect, useState } from "react";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { Button, FlatList, ScrollView, Text, View } from "react-native";
 import { getPopularLeagues } from "./api/request";
-import League, { LeagueProps } from "./components/League";
+import League from "./components/League";
+
+import { useRouter } from "expo-router";
+import { styleIndex } from "./styles/styleContainer";
 
 export default function Index() {
+  const router = useRouter();
   const [leagues, setLeagues] = useState<LeagueProps[]>([]);
 
   useEffect(() => {
@@ -16,42 +21,28 @@ export default function Index() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Ligas de Futebol </Text>
-      <Text style={styles.subtitle}>
-        {" "}
-        Veja as ligas mais populares do futebol mundial!
-      </Text>
+    <ScrollView>
+      <View style={styleIndex.container}>
+        <Text style={styleIndex.title}>Ligas de Futebol </Text>
+        <Text style={styleIndex.subtitle}>
+          Veja as ligas mais populares do futebol mundial!
+        </Text>
 
-      <FlatList
-        style={styles.list}
-        numColumns={2}
-        data={leagues}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => <League data={item} />}
-      />
-    </View>
+        <FlatList
+          style={styleIndex.list}
+          numColumns={2}
+          data={leagues}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => <League data={item} />}
+        />
+
+        <Button
+          title="🐣"
+          onPress={() => router.push("/easter")}
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
+      </View>
+    </ScrollView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 25,
-    backgroundColor: "#333",
-  },
-  title: {
-    fontSize: 26,
-    marginTop: 50,
-    fontWeight: "bold",
-    color: "#fff",
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#939393",
-  },
-  list: {
-    backgroundColor: "#f2f2f2",
-    borderRadius: 15,
-  },
-});
