@@ -5,11 +5,13 @@ import { getPopularLeagues } from "./api/request";
 import League from "./components/League";
 
 import { useRouter } from "expo-router";
+import Map from "./map";
 import { styleIndex } from "./styles/styleContainer";
 
 export default function Index() {
   const router = useRouter();
   const [leagues, setLeagues] = useState<LeagueProps[]>([]);
+  const [showMap, setShowMap] = useState(false);
 
   useEffect(() => {
     fetchLeagues();
@@ -36,6 +38,16 @@ export default function Index() {
           renderItem={({ item }) => <League data={item} />}
           scrollEnabled={false}
         />
+
+        <Button
+          title={showMap ? "Ocultar mapa" : "VER MAPA"}
+          onPress={() => setShowMap((prev) => !prev)}
+          color="#f32c21"
+        />
+
+        {showMap && (
+          <Map />
+        )}
 
         <Button
           title="🐣"
