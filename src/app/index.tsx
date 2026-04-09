@@ -39,15 +39,15 @@ export default function Index() {
           scrollEnabled={false}
         />
 
-        <Button
+        {/* <Button
           title={showMap ? "Ocultar mapa" : "VER MAPA"}
           onPress={() => setShowMap((prev) => !prev)}
           color="#f32c21"
-        />
+        /> */}
 
-        {showMap && (
+        {/* {showMap && ( */}
           <Map />
-        )}
+        {/* )} */}
 
         <Button
           title="🐣"
