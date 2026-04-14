@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { getPopularLeagues } from "./src/app/api/request";
+import { getPopularLeagues } from "./src/api/request";
 
 // getPopularLeagues().then(console.log).catch(console.error);
 

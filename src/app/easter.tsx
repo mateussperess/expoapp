@@ -1,8 +1,10 @@
 import { Image, Text, View } from "react-native";
+// import happyEaster from "../../../assets/images/happyeasterweek.png";
+// import happyEaster from "@/assets/images/happyeasterweek.png";
 import happyEaster from "../../assets/images/happyeasterweek.png";
 import easterStyle from "./styles/styleEaster";
 
-export default function Easter() {
+function Easter() {
   return (
     <View style={easterStyle.container}>
       <Image source={happyEaster} />
@@ -13,3 +15,5 @@ export default function Easter() {
     </View>
   );
 }
+
+export default Easter;

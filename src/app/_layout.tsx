@@ -5,8 +5,8 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <Stack>
-        <Stack.Screen name="index" options={{ title: "Ligas" }} />
-        <Stack.Screen name="easter" options={{ title: "Easter" }} />
+        <Stack.Screen name="index" options={{ title: "ROTACRIC" }} />
+        <Stack.Screen name="easter" options={{ title: "EasterEgg" }} />
       </Stack>
     </SafeAreaProvider>
   );
