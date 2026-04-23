@@ -3,9 +3,5 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.sortMembers": "explicit"
-  },
-  "[typescriptreact]": {
-    "editor.formatOnSave": false,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
